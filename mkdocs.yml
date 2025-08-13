@@ -1,0 +1,38 @@
+site_name: Santa Docs
+markdown_extensions:
+  - attr_list
+theme:
+  name: material
+  logo: images/logo.png
+  favicon: images/favicon.png
+  features:
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Portal do Paciente:
+      - Visão Geral: portal-paciente/index.md
+      - Arquitetura:
+          - API: portal-paciente/arquitetura/backend_api.md
+          - App Mobile: portal-paciente/arquitetura/app_mobile.md
+          - Web Admin: portal-paciente/arquitetura/painel_admin.md
+          - Banco de Dados: portal-paciente/arquitetura/banco_dados.md
+    #   - Uso:
+    #       - Fluxo Paciente: portal-paciente/uso/fluxo_paciente.md
+    #       - Fluxo Administrador: portal-paciente/uso/fluxo_admin.md
+    #       - Integrações: portal-paciente/uso/integracoes.md
+      - Ambientes: portal-paciente/ambientes/index.md
+  - Monitoramento Clínico:
+      - Visão Geral: cma/index.md
+  - Santa Health:
+      - Visão Geral: santa-health/index.md
+  - Helix:
+      - Visão Geral: helix/index.md
+  - Balança Smart:
+      - Visão Geral: smart-balance/index.md
+  - APIs Integração:
+      - Visão Geral: integration/index.md
+  - RPA Financeiro:
+      - Visão Geral: rpa-financial/index.md
+  - Santa News:
+      - Visão Geral: santa-news/index.md
