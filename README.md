@@ -31,10 +31,6 @@ O MkDocs é utilizado para gerar uma documentação clara, organizada e navegáv
 Antes de rodar localmente:
 
 - [Python 3.10+](https://www.python.org/downloads/)  
-- [MkDocs](https://www.mkdocs.org/) e o tema Material:  
-```bash
-pip install mkdocs-material
-````
 
 ---
 
@@ -73,4 +69,10 @@ Para gerar a versão estática (HTML) pronta para deploy:
 
 ```bash
 mkdocs build
+```
+
+Para deploy direto no GitHub Pages:
+
+```bash
+mkdocs gh-deploy
 ```
