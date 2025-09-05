@@ -4,17 +4,6 @@ Bem-vindo ao repositório **Santa Docs**, nosso hub central de documentação t�
 
 ---
 
-## 🔹 Sumário
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Execução](#execução)
-- [Acesso à Documentação](#acesso-à-documentação)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-
----
-
 ## 📝 Sobre o Projeto
 
 O MkDocs é utilizado para gerar uma documentação clara, organizada e navegável, com suporte a:

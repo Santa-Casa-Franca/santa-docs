@@ -52,15 +52,15 @@ O **Time de Inovação** tem como propósito **transformar o hospital por meio d
 </div>
 
 <div style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; text-align: center; background: #f9f9f9;">
-  <h3>👨‍💻 Dev1</h3>
+  <h3>👨‍💻 Arthur Cesar</h3>
   <p><strong>Trainee Developer</strong></p>
   <p>Desenvolvimento e documentação técnica, apoiando o time em soluções ágeis.</p>
 </div>
 
 <div style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; text-align: center; background: #f9f9f9;">
-  <h3>👩‍💻 Dev2</h3>
+  <h3>👩‍💻 Felipe Rezende</h3>
   <p><strong>Trainee Developer</strong></p>
-  <p>Desenvolvimento e documentação técnica, fomentando aprendizado contínuo.</p>
+  <p>Desenvolvimento e documentação técnica, apoiando o time em soluções ágeis.</p>
 </div>
 
 </div>
