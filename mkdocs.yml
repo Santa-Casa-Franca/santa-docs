@@ -21,12 +21,12 @@ nav:
     #       - Fluxo Paciente: portal-paciente/uso/fluxo_paciente.md
     #       - Fluxo Administrador: portal-paciente/uso/fluxo_admin.md
     #       - Integrações: portal-paciente/uso/integracoes.md
-      - Ambientes: portal-paciente/ambientes/index.md
+      - Ambientes: portal-paciente/ambientes/index.md      
   - Monitoramento Clínico:
       - Visão Geral: cma/index.md
       - Arquitetura:       
-          - Web Admin: cma/arquitetura/painel_admin.md
-      
+          - Web Admin: cma/arquitetura/painel_admin.md  
+      - Ambientes: cma/ambientes/index.md       
   - Santa Health:
       - Visão Geral: santa-health/index.md
   - Helix:
@@ -35,7 +35,14 @@ nav:
       - Visão Geral: smart-balance/index.md
   - APIs Integração:
       - Visão Geral: integration/index.md
+  - API Autenticação:
+      - Visão Geral: authenticator/index.md
+      - Arquitetura: 
+          - API: authenticator/arquitetura/backend_api.md
+          - Banco de Dados: authenticator/arquitetura/banco_dados.md
+      - Ambientes: authenticator/ambientes/index.md  
   - RPA Financeiro:
       - Visão Geral: rpa-financial/index.md
   - Santa News:
       - Visão Geral: santa-news/index.md
+
