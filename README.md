@@ -51,7 +51,7 @@ mkdocs serve -a 0.0.0.0:8080
 Acesse em seu navegador:
 
 ```
-http://127.0.0.1:8000/
+http://127.0.0.1:8080/
 ```
 
 Para gerar a versão estática (HTML) pronta para deploy:

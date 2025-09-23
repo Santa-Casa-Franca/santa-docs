@@ -24,6 +24,9 @@ nav:
       - Ambientes: portal-paciente/ambientes/index.md
   - Monitoramento Clínico:
       - Visão Geral: cma/index.md
+      - Arquitetura:       
+          - Web Admin: cma/arquitetura/painel_admin.md
+      
   - Santa Health:
       - Visão Geral: santa-health/index.md
   - Helix:
