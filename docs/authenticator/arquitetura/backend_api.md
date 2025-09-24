@@ -89,4 +89,5 @@ No ambiente de produção, a URL será definida conforme configuração do servi
 - **Swagger** para documentação de endpoints  
 
 ---
+
 📌 **Observação:** Esta documentação deve ser atualizada sempre que novos módulos forem adicionados ou alterados.

@@ -49,6 +49,10 @@ nav:
 
   - APIs Integração:
       - Visão Geral: integration/index.md
+      - Arquitetura:
+          - API: integration/arquitetura/backend_api.md
+          - Banco de Dados: integration/arquitetura/banco_dados.md
+      - Ambientes: integration/ambientes/index.md 
 
   - API Autenticação:
       - Visão Geral: authenticator/index.md

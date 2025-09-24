@@ -1,10 +1,10 @@
 # Documentação do Banco de Dados PostgreSQL
 
-📅 **Última atualização:** 23/09/2025
+📅 **Última atualização:** 24/09/2025
 
 ## Visão Geral
 
-Este documento apresenta a estrutura do banco de dados PostgreSQL utilizado no projeto, incluindo tabelas, relacionamentos, índices e outras informações importantes para o entendimento e manutenção da base de dados.
+Este documento apresenta a estrutura do banco de dados PostgreSQL utilizado no projeto, incluindo tabelas, relacionamentos e outras informações importantes para o entendimento e manutenção da base de dados.
 
 O banco de dados foi projetado para atender aos requisitos do sistema com foco em performance, integridade e escalabilidade.
 
@@ -14,7 +14,7 @@ O banco de dados foi projetado para atender aos requisitos do sistema com foco e
 
 - **SGBD:** PostgreSQL
 - **Versão:** 13.x
-- **Principais tabelas:** users, roles, sectors, applications, permissions
+- **Principais tabelas:** scheduling_sessions, scheduling_steps
 - **Relacionamentos:** Chaves estrangeiras e índices para otimização
 - **Esquema:** público (public)
 
