@@ -1,4 +1,4 @@
-# 📄 Projeto Santa News
+# Projeto Santa News
 
 > **Data de Emissão:** 24/09/2025  
 > **Autor:** Felipe Ferreira

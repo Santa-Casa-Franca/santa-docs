@@ -9,12 +9,11 @@
 2. [Arquitetura da Aplicação](#arquitetura-da-aplicacao)  
 3. [Tecnologias e Dependências](#tecnologias-e-dependencias)  
 4. [Estrutura de Pastas](#estrutura-de-pastas)  
-5. [Fluxo de Autenticação](#fluxo-de-autenticacao)  
-6. [Integração com Backend](#integracao-com-backend)  
-7. [Gerenciamento de Estado](#gerenciamento-de-estado)  
-8. [Estilo e UI](#estilo-e-ui)  
-9. [Boas Práticas e Padronizações](#boas-praticas-e-padronizacoes)  
-10. [Configuração e Execução](#configs)  
+5. [Integração com Backend](#integracao-com-backend)  
+6. [Gerenciamento de Estado](#gerenciamento-de-estado)  
+7. [Estilo e UI](#estilo-e-ui)  
+8. [Boas Práticas e Padronizações](#boas-praticas-e-padronizacoes)  
+9. [Configuração e Execução](#configs)  
 
 ---
 
@@ -48,35 +47,25 @@ A arquitetura é baseada em **Modular + Context API**:
 
 ```
 .
-├── app/
-│   ├── locale/
-│   └── api/
+├── app/                              # Roteamento principal (Next.js App Router)
+│   ├── locale/                       
+│   └── api/                          # Endpoints da API interna
 ├── components/
-│   ├── admin/
-│   ├── base-component/
-│   ├── home/
-│   ├── layout/
-│   ├── login/
-│   ├── panel-control/
-│   ├── recovery-password/
-│   ├── register/
+│   ├── admin/                        # Área administrativa (sensível)
+│   ├── layout/                       # Layouts globais
+│   ├── login/                        # Autenticação
+│   ├── panel-control/                # Painel principal
 │   └── ui/
-├── config/
+├── config/                           # Configurações críticas
 ├── hooks/
 ├── lib/
-│   ├── api/
-│   └── validations/
+│   ├── api/                          # Cliente HTTP/configurações de API
+│   └── validations/                  # Validações de segurança
 ├── messages/
 ├── providers/
-│   ├── auth/
-│   └── home/
+│   └── auth/                         # Gerenciamento de sessão
 ├── public/
-│   └── images/
-├── styles/
 └── types/
-    ├── filter/
-    └── trainings/
-
 ```
 
 ---
@@ -117,5 +106,3 @@ Para detalhes completos sobre deploy e configuração, consulte o README do proj
 ## 📌 Observações
 - Variáveis sensíveis estão armazenadas no `.env`.  
 - Os componentes seguem padrão reutilizável para consistência visual.  
-
----

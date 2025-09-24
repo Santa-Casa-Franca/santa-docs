@@ -39,9 +39,9 @@ Desenvolvida em **NestJS** com **Sequelize ORM**, utiliza o **PostgreSQL** como 
 ```
 src/
 ├── app/
-│   ├── config/
-│   ├── modules/
-│   │   ├── alerts/
+│   ├── config/                      # Configurações globais da aplicação
+│   ├── modules/                     # Módulos de domínio (arquitetura hexagonal)
+│   │   ├── alerts/                  # Sistema de alertas/notificações
 │   │   │   ├── application/
 │   │   │   │   ├── dto/
 │   │   │   │   └── services/
@@ -59,13 +59,13 @@ src/
 │   │   ├── business-intelligence/
 │   │   ├── census/
 │   │   ├── forms/
-│   │   ├── gateway/
+│   │   ├── gateway/                 # Gateway de integrações externas
 │   │   ├── mobile/
-│   │   └── signature/
+│   │   └── signature/               # Módulo de assinaturas (crítico)
 │   └── shared/
 │       ├── application/
 │       │   └── services/
-│       │       └── rabbitmq/
+│       │       └── rabbitmq/        # Comunicação com filas (importante)
 │       │           ├── hemodialysis/
 │       │           └── respiratory/
 │       ├── docs/
@@ -73,17 +73,17 @@ src/
 │       ├── domain/
 │       │   └── entities/
 │       ├── infrastructure/
-│       │   └── databse/
+│       │   └── databse/             # Configuração do banco de dados
 │       │       └── schedule/
 │       ├── presentation/
 │       │   └── controllers/
 │       ├── resource/
 │       └── utils/
-├── health/
-├── metrics/
-├── migrations/
+├── health/                          # Health checks da aplicação
+├── metrics/                         # Métricas de monitoramento
+├── migrations/                      # Migrações do banco de dados (crítico)
 ├── prometheus/
-└── seeders/             
+└── seeders/                         # Dados iniciais para desenvolvimento           
 ``` 
 
 --- 

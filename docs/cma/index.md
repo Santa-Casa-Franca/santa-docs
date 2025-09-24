@@ -1,4 +1,4 @@
-# 📄 Projeto de Monitoramento Assistencial
+# Projeto de Monitoramento Assistencial
 
 >**Data de Emissão:** 23/09/2025  
 >**Autor:** Felipe Ferreira

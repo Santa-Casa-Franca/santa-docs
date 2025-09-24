@@ -54,32 +54,32 @@ florence-health-app/
 ├── assets/
 ├── patches/
 ├── src/
-│ ├── assets/
-│ ├── components/
-│ ├── context/
-│ ├── data/
-│ ├── enum/
-│ ├── hooks/
-│ ├── routes/
-│ ├── screens/
-│ ├── services/
-│ ├── types/
-│ ├── utils/
-│ ├── validations/
-│ └── styles.css
+│   ├── assets/
+│   ├── components/                  # Componentes reutilizáveis
+│   ├── context/                     # Gerenciamento de estado global (React Context)
+│   ├── data/                        # Dados estáticos/mocks
+│   ├── enum/                        # Enumerações
+│   ├── hooks/                       # Custom hooks
+│   ├── routes/                      # Configuração de navegação
+│   ├── screens/                     # Telas/páginas da aplicação
+│   ├── services/                    # Integrações com APIs externas (crítico)
+│   ├── types/                       # Tipos TypeScript
+│   ├── utils/                       # Utilitários e funções auxiliares
+│   ├── validations/                 # Validações de formulários
+│   └── styles.css
 ├── .editorconfig
-├── .env.credentials
+├── .env.credentials                 # Credenciais sensíveis (NÃO COMMITAR)
 ├── .eslintrc.json
 ├── .gitignore
-├── app.json
-├── App.tsx
+├── app.json                         # Configuração do app Expo
+├── App.tsx                          # Componente raiz da aplicação
 ├── babel.config.js
-├── eas.json
-├── google-services.json
-├── package.json
+├── eas.json                         # Configuração EAS Build (Expo)
+├── google-services.json             # Configuração Firebase (Android)
+├── package.json                     # Dependências e scripts do projeto
 ├── postcss.config.js
 ├── README.md
-├── tailwind.config.js
+├── tailwind.config.js               # Configuração do Tailwind CSS
 ├── tsconfig.js
 ├── webpack.config.js
 └── yarn.lock

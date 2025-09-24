@@ -57,73 +57,73 @@ public/
 
 src/
 ├── app/
-│   ├── admin-panel/
+│   ├── admin-panel/                 # Painel administrativo
 │   ├── application/
-│   │   └── alertas/
-│   ├── authentication/
+│   │   └── alertas/                 # Sistema de alertas
+│   ├── authentication/              # Autenticação e login
 │   │   ├── auth/
 │   │   └── entrar/
-│   ├── contexts/
-│   ├── home/
-│   ├── hospital-discharge/
-│   ├── open-pages/
-│   │   ├── dashboards/
+│   ├── contexts/                    # Contextos React
+│   ├── home/                        # Página inicial
+│   ├── hospital-discharge/          # Alta hospitalar
+│   ├── open-pages/                  # Páginas acessíveis
+│   │   ├── dashboards/              # Dashboards principais
 │   │   │   ├── hospital-discharge/
-│   │   │   ├── occupancy/
-│   │   │   └── santa-health/
-│   │   ├── hemodialysis/
+│   │   │   ├── occupancy/           # Ocupação hospitalar
+│   │   │   └── santa-health/        # Dashboard Santa Saúde
+│   │   ├── hemodialysis/            # Hemodiálise (módulo crítico)
 │   │   │   ├── form/
 │   │   │   ├── scan-client/
 │   │   │   └── weight-scan/
-│   │   └── monitoramento-clinico/
+│   │   └── monitoramento-clinico/   # Monitoramento clínico
 │   └── style-guide/
 ├── components/
-│   ├── AdminPanel/
+│   ├── AdminPanel/                  # Componentes do painel admin
 │   │   ├── Applications/
 │   │   ├── Permissions/
 │   │   ├── Roles/
 │   │   ├── Sectors/
 │   │   └── Users/
-│   ├── Alerts/
+│   ├── Alerts/                      # Componentes de alertas
 │   │   ├── Card/
 │   │   │   └── Header/
 │   │   ├── Columns/
 │   │   ├── Modal/
 │   │   └── Tag/
-│   ├── ClinicalMonitoring/
-│   │   ├── Delayed/
+│   ├── ClinicalMonitoring/          # Monitoramento clínico
+│   │   ├── Delayed/                 # Pacientes atrasados
 │   │   │   ├── Card/
 │   │   │   ├── Carousel/
 │   │   │   └── Content/
-│   │   └── Deterioration/
+│   │   └── Deterioration/           # Deterioração clínica
 │   │       ├── Card/
 │   │       ├── Carousel/
 │   │       └── Content/
 │   ├── container/
-│   ├── Dashboards/
+│   ├── Dashboards/                  # Componentes de dashboard
 │   │   ├── BarChartSkeleton/
 │   │   ├── DonutChartSkeleton/
 │   │   ├── HospitalDischarge/
 │   │   ├── Occupancy/
-│   │   └── SantaHealthApp/
+│   │   └── SantaHealthApp/          # Dashboard Santa Saúde
 │   │       ├── Deterioration/
 │   │       │   ├── Card/
 │   │       │   └── DonutChart/
-│   │       ├── NursingNotes/
+│   │       ├── NursingNotes/        # Anotações de enfermagem
 │   │       │   ├── BarCharts/
 │   │       │   └── Card/
-│   │       └── VitalSigns/
+│   │       └── VitalSigns/          # Sinais vitais
 │   │           ├── BarCharts/
 │   │           └── Card/
 │   ├── forms/
-│   ├── Hemodialysis/
+│   ├── Hemodialysis/                # Componentes de hemodiálise
 │   │   ├── Form/
 │   │   ├── ScanClient/
 │   │   └── WeightScan/
 │   ├── Home/
 │   ├── HospitalDischarge/
 │   ├── Icons/
-│   ├── Layout/
+│   ├── Layout/                      # Layout principal
 │   │   ├── Content/
 │   │   │   └── Header/
 │   │   ├── Loading/
@@ -135,25 +135,25 @@ src/
 │   └── ui/
 │       └── tremor-charts/
 ├── config/
-│   └── navigation/
+│   └── navigation/                  # Configuração de navegação
 ├── hooks/
 ├── lib/
 ├── provider/
 │   ├── dashboard/
-│   │   └── santa-health/
-│   └── hemodialysis/
-├── service/
+│   │   └── santa-health/            # Provider do dashboard
+│   └── hemodialysis/                # Provider da hemodiálise
+├── service/                         # Serviços de API (crítico)
 │   ├── alerts/
-│   ├── auth/
-│   ├── clinical-monitoring/
+│   ├── auth/                        # Serviço de autenticação
+│   ├── clinical-monitoring/         # Monitoramento clínico
 │   │   ├── delayed/
 │   │   └── deterioration/
 │   ├── dashboard/
 │   │   └── santa-health/
-│   ├── hemodialysis/
-│   ├── socketio/
-│   └── vital-signs/
-├── types/
+│   ├── hemodialysis/                # Serviço de hemodiálise
+│   ├── socketio/                    # Comunicação em tempo real
+│   └── vital-signs/                 # Sinais vitais
+├── types/                           # Tipos TypeScript
 │   ├── Alerts/
 │   ├── ClinicalMonitoring/
 │   │   ├── Delayed/
@@ -164,7 +164,7 @@ src/
 │   │   └── SantaHealth/
 │   ├── Hemodialysis/
 │   └── User/
-└── validations/
+└── validations/                     # Validações de formulários
 
 ```
 
@@ -223,6 +223,4 @@ Para detalhes completos sobre deploy e configuração, consulte o README do proj
 ## 📌 Observações
 - Variáveis sensíveis estão armazenadas no `.env`.
 - Os componentes seguem padrão reutilizável para consistência visual.
-- O layout base está em `app/application/layout.tsx`.
 
----

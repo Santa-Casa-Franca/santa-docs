@@ -27,5 +27,3 @@ Para facilitar a navegação e análise da estrutura do banco, foi gerada uma do
 Você pode acessar essa documentação diretamente pelo link abaixo:
 
 [🔗 Visualizar Documentação do SchemaSpy](../banco-de-dados/documentacao/index.html){:target="_blank"}
-
----
