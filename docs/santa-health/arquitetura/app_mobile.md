@@ -20,7 +20,7 @@
 ---
 
 ## 1. Visão Geral {#visão-geral}
-O **Santa Health** é um aplicativo mobile desenvolvido para auxiliar médicos, enfermeiros e demais profissionais de saúde no atendimento aos pacientes do **Hospital Geral** e do **Hospital do Coração**. Ele permite acesso a informações clínicas, organização de tarefas e acompanhamento da ocupação de leitos.
+O **Santa Health** é um aplicativo mobile desenvolvido para auxiliar médicos, enfermeiros e demais profissionais de saúde no atendimento aos pacientes do **Hospital Geral** e do **Hospital do Coração**. Ele permite acesso a informações clínicas e organização de tarefas.
 A aplicação se comunica com o sistema hospitalar **Tasy** e segue boas práticas de desenvolvimento mobile com foco em performance e segurança.
 
 ---
@@ -43,7 +43,6 @@ A arquitetura adota o padrão **modular**, com separação clara entre UI, lógi
 - **Validação:** Zod  
 - **Estado Global:** Context API  
 - **Estilização:** NativeWind (Tailwind CSS adaptado para RN)  
-- **Ambiente:** Configurado via `.env`  
 - **Comunicação HTTP:** Axios  
 - **Integração com EMR:** Sistema Tasy via REST API  
 
@@ -101,8 +100,8 @@ florence-health-app/
 A navegação é composta por:
 
 - **Stack Inicial:** Login, seleção de setor.  
-- **Stack Principal:** Telas de pacientes, tarefas, censo hospitalar, perfil.  
-- **Tabs Inferiores:** Navegação rápida entre setores, pacientes e tarefas.  
+- **Stack Principal:** Telas de pacientes e relatórios.  
+- **Tabs Inferiores:** Início, escanear e perfil.  
 - **Modais:** Visualização de detalhes clínicos e registros.
 
 ---
@@ -119,6 +118,7 @@ A navegação é composta por:
 ## 8. Gerenciamento de Estado {#gerenciamento-de-estado}
 - **AuthContext:** Autenticação, login, logout e gerenciamento de token  
 - **NotificationsDeviceContext:** Dispara notificações e mensagens
+- **UseStates:** Cada estado está diretamente ligado ao componente que o utiliza
 
 ---
 
@@ -131,7 +131,6 @@ A navegação é composta por:
 ## 10. Boas Práticas e Padronizações {#boas-práticas-e-padronizações}
 - Uso de **TypeScript** para segurança de tipos  
 - Organização modular e separação de responsabilidades  
-- Utilização de **eslint** para padronização de código  
 - Commits no padrão **Conventional Commits**
 
 ---

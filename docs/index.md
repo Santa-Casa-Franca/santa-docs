@@ -12,7 +12,7 @@ Esta é a documentação oficial de todos os projetos desenvolvidos pelo **Time 
 - [Helix](helix/index.md) - API centralizadora de microserviços
 - [Balança Smart](smart-balance/index.md) - Solução IoT para monitoramento inteligente de peso
 - [APIs de Integração](integration/index.md) - Conjunto de APIs integradoras entre sistemas internos e externos
-- [APIs Autenticação](authenticator/index.md) - API que autentica usuários e gera tokens JWT seguros
+- [API de Autenticação](authenticator/index.md) - API que autentica usuários e gera tokens JWT seguros
 - [RPA Financeiro](rpa-financial/index.md) - Automação robótica de processos financeiros
 - [SantaNews](santa-news/index.md) - Plataforma de comunicados internos e treinamentos
 

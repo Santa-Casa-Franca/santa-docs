@@ -32,11 +32,14 @@ nav:
   - Santa Health:
       - Visão Geral: santa-health/index.md
       - Arquitetura:
-          - App Mobile: santa-health/arquitetura/app_mobile.md
-      - Ambientes: santa-health/ambientes/index.md   
+          - App Mobile: santa-health/arquitetura/app_mobile.md      
 
   - Helix:
       - Visão Geral: helix/index.md
+      - Arquitetura:
+          - API: helix/arquitetura/backend_api.md
+          - Banco de Dados: helix/arquitetura/banco_dados.md
+      - Ambientes: helix/ambientes/index.md  
 
   - Balança Smart:
       - Visão Geral: smart-balance/index.md
@@ -53,7 +56,7 @@ nav:
 
   - RPA Financeiro:
       - Visão Geral: rpa-financial/index.md
-      
+
   - Santa News:
       - Visão Geral: santa-news/index.md
 

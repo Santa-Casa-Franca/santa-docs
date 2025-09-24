@@ -20,15 +20,13 @@ O **Projeto Santa Health** é um aplicativo móvel voltado para otimizar o traba
 
 ### 🎯 Objetivos do Software
 - Apoiar o atendimento clínico e a tomada de decisão no cuidado ao paciente.
-- Melhorar a organização de tarefas por cargo e setor.
-- Acompanhar a ocupação hospitalar em tempo real.
+- Acompanhar os sinais vitais do paciente em tempo real.
 
 ### 📌 Escopo Funcional
 - Autenticação integrada ao sistema **Tasy**.  
 - Visualização de dados clínicos detalhados dos pacientes.  
 - Registro de informações e evolução clínica.  
-- Distribuição e gerenciamento de tarefas por setor.  
-- Acompanhamento do censo hospitalar (ocupação de leitos).  
+- Acompanhamento do censo hospitalar.  
 
 ---
 
@@ -37,7 +35,7 @@ O **Projeto Santa Health** é um aplicativo móvel voltado para otimizar o traba
 | Grupo                        | Responsabilidades                                                                 |
 |------------------------------|-----------------------------------------------------------------------------------|
 | **Equipe de Inovação**       | Desenvolvimento, manutenção e evolução contínua da aplicação.                     |
-| **Equipe Médica**            | Uso da plataforma para acompanhamento e registro clínico de pacientes.            |
+| **Equipe Assistencial**      | Uso da plataforma para acompanhamento e registro clínico de pacientes.            |
 | **Administração Hospitalar** | Monitoramento de dados estratégicos, como ocupação e fluxo de pacientes.          |
 
 ---
@@ -49,7 +47,6 @@ O sistema foi projetado com uma arquitetura moderna, escalável e de fácil manu
 - **🎨 Estilização:** Utiliza **NativeWind**, que adapta os conceitos do Tailwind CSS ao ambiente mobile.  
 - **📝 Formulários:** Criados com **React Hook Form** e validados por **Zod** para maior confiabilidade.  
 - **🔐 Autenticação:** Integração direta com o sistema hospitalar **Tasy** para login unificado.  
-- **⚙️ Ambiente:** Configurações e credenciais seguras por meio de variáveis `.env`.
 
 ---
 
@@ -79,9 +76,8 @@ O sistema foi projetado com uma arquitetura moderna, escalável e de fácil manu
 - **Estilização:** NativeWind (Tailwind CSS para React Native)  
 - **Formulários:** React Hook Form, Zod  
 - **Gerenciadores de Pacotes:** Yarn, npm  
-- **Ambientes de Teste:** Android Studio, Xcode  
-- **Autenticação:** Integração com sistema Tasy  
-- **Configuração de Ambiente:** Arquivos `.env`  
+- **Autenticação:** Integração com sistema Tasy   
+- **Integrações:** Integração com API Helix
 
 ---
 📌 **Observação:** Esta documentação deve ser atualizada a cada nova versão do projeto para garantir rastreabilidade e alinhamento com os objetivos clínicos e técnicos.
