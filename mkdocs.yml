@@ -43,6 +43,9 @@ nav:
 
   - Balança Smart:
       - Visão Geral: smart-balance/index.md
+      - Arquitetura:       
+          - Web Admin: smart-balance/arquitetura/painel_admin.md  
+      - Ambientes: smart-balance/ambientes/index.md 
 
   - APIs Integração:
       - Visão Geral: integration/index.md

@@ -58,7 +58,9 @@ src/
 ├── seeders/                # Scripts para popular dados iniciais
 └── utils/                  # Funções utilitárias gerais
 
-```             
+```            
+
+--- 
 
 ## 4. Configuração e Execução {#configuração-e-execução}
 Para detalhes completos sobre deploy e configuração, consulte o README do projeto no GitHub
