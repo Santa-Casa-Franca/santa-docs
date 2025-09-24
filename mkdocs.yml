@@ -67,6 +67,8 @@ nav:
   - Santa News:      
       - Visão Geral: santa-news/index.md
       - Arquitetura:       
+          - API: santa-news/arquitetura/backend_api.md
           - Web Admin: santa-news/arquitetura/painel_admin.md  
+          - Banco de Dados: santa-news/arquitetura/banco_dados.md
       - Ambientes: santa-news/ambientes/index.md  
 

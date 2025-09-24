@@ -47,9 +47,9 @@ A solução foi desenvolvida com **Next.js**, garantindo alta performance, SSR e
 ## 3. Arquitetura do Sistema {#arquitetura-do-sistema}
 A aplicação adota uma arquitetura baseada em **Next.js** com **React**, seguindo os princípios de componentização e modularidade.
 
-- **Frontend:** aplicação desenvolvida com **Next.js (v13+)**.
-- **Estilização**: UI construída com **TailwindCSS**, **Radix UI** e componentes personalizados.  
-- **Integração:**  comunicação com a **API de Treinamento** para listagem de vídeos e metadados.  
+- **Frontend:** Portal web para equipe de colaboradores.
+- **Backend:** API REST com autenticação JWT, integração com banco de dados e serviços de notificação.
+- **Banco de Dados:** PostgreSQL para informações da aplicação.
 
 ---
 
@@ -69,14 +69,11 @@ A aplicação adota uma arquitetura baseada em **Next.js** com **React**, seguin
 
 ## 6. Requisitos Técnicos {#requisitos-técnicos}
 - **Linguagens:** TypeScript, JavaScript  
-- **Framework:** Next.js (v13+), React  
+- **Frameworks:** Next.js (v13+), React  
+- **Bancos de Dados:** PostgreSQL
 - **Bibliotecas de UI:** TailwindCSS, Radix UI, clsx, lucide-react  
-- **Gerenciamento de Estado:** React Query  
-- **Validação de Dados:** Zod  
-- **Formulários:** React Hook Form  
-- **Internacionalização:** next-intl  
-- **Manipulação de datas:** date-fns  
-- **Player de Vídeo:** video.js, videojs-contrib-quality-levels  
+- **Hospedagem:** Docker  
+- **Autenticação:** JWT 
 
 ---
 📌 **Observação:** Esta documentação deve ser atualizada a cada nova versão do projeto para garantir rastreabilidade e alinhamento com os objetivos clínicos e técnicos.
