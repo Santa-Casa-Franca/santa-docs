@@ -1,4 +1,4 @@
-# Documentação Técnica - API Helix
+# Documentação Técnica - Backend API
 
 📅 **Última atualização:** 24/09/2025
 

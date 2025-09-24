@@ -1,4 +1,4 @@
-# Documentação Técnica - API de Autenticação 
+# Documentação Técnica - Backend API
 
 📅 **Última atualização:** 23/09/2025
 
