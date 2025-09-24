@@ -64,6 +64,9 @@ nav:
   - RPA Financeiro:
       - Visão Geral: rpa-financial/index.md
 
-  - Santa News:
+  - Santa News:      
       - Visão Geral: santa-news/index.md
+      - Arquitetura:       
+          - Web Admin: santa-news/arquitetura/painel_admin.md  
+      - Ambientes: santa-news/ambientes/index.md  
 
