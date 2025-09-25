@@ -37,7 +37,7 @@ Seu principal objetivo é reduzir o retrabalho humano, mitigar erros e acelerar 
 | Grupo                     | Responsabilidade                                                                |
 |---------------------------|---------------------------------------------------------------------------------|
 | **Equipe de Inovação**    | Desenvolver, manter e evoluir a plataforma conforme as demandas de automação. |
-| **Equipe Financeira**     | Enviar arquivos e monitorar o status das automações.                          |
+| **Equipe Financeira**     | Enviar arquivos e executar as automações.                          |
 
 ---
 
@@ -60,15 +60,15 @@ A aplicação segue arquitetura **cliente-servidor**, com foco em automações v
 ## 5. Fluxo de Uso {#fluxo-de-uso}
 1. Colaborador realiza o upload de um arquivo no sistema.  
 2. O sistema identifica o template e processa o arquivo.  
-3. O colaborador acompanha o status da automação.  
-4. Os dados extraídos são armazenados.  
+3. Os dados extraídos são armazenados. 
+4. O colaborador executa a automação.  
 
 ---
 
 ## 6. Requisitos Técnicos {#requisitos-tecnicos}
 - **Linguagens:** TypeScript 
 - **Frameworks Frontend:** Next.js 15, React
-- **Frameworks Backend:** NestJS, Sequelize ORM
+- **Frameworks Backend:** NestJS, Sequelize ORM, Puppeteer
 - **Bibliotecas de UI:** Material UI (MUI), Emotion
 - **Banco de Dados:** PostgreSQL
 - **Hospedagem e Containerização:** Docker

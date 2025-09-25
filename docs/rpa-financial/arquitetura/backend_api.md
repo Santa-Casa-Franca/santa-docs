@@ -76,6 +76,7 @@ No ambiente de produção, a URL será definida conforme configuração do servi
 - **PostgreSQL**  
 - **Docker**  
 - **Sequelize ORM**  
+- **Puppeteer**
 
 ---
 📌 **Observação:** Esta documentação deve ser atualizada sempre que novos módulos forem adicionados ou alterados.
