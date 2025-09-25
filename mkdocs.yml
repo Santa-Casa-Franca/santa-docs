@@ -63,6 +63,11 @@ nav:
 
   - RPA Financeiro:
       - Visão Geral: rpa-financial/index.md
+      - Arquitetura:       
+          - API: rpa-financial/arquitetura/backend_api.md
+          - Web Admin: rpa-financial/arquitetura/painel_admin.md  
+          - Banco de Dados: rpa-financial/arquitetura/banco_dados.md
+      - Ambientes: rpa-financial/ambientes/index.md 
 
   - Santa News:      
       - Visão Geral: santa-news/index.md
