@@ -143,5 +143,5 @@ Para detalhes completos sobre deploy e configuração, consulte o README do proj
 - Os componentes seguem padrão reutilizável para consistência visual.
 - O layout base está em `app/application/layout.tsx`.
 
----
+
 

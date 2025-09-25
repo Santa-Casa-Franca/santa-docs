@@ -1,6 +1,6 @@
 # Documentação do Banco de Dados PostgreSQL
 
-📅 **Última atualização:** 13/08/2025
+📅 **Última atualização:** 23/09/2025
 
 ## Visão Geral
 
@@ -14,7 +14,7 @@ O banco de dados foi projetado para atender aos requisitos do sistema com foco e
 
 - **SGBD:** PostgreSQL
 - **Versão:** 13.x
-- **Principais tabelas:** usuários, pacientes, chats, devices, etc.
+- **Principais tabelas:** users, roles, sectors, applications, permissions
 - **Relacionamentos:** Chaves estrangeiras e índices para otimização
 - **Esquema:** público (public)
 
@@ -27,5 +27,3 @@ Para facilitar a navegação e análise da estrutura do banco, foi gerada uma do
 Você pode acessar essa documentação diretamente pelo link abaixo:
 
 [🔗 Visualizar Documentação do SchemaSpy](../banco-de-dados/documentacao/index.html){:target="_blank"}
-
-

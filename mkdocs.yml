@@ -21,18 +21,59 @@ nav:
     #       - Fluxo Paciente: portal-paciente/uso/fluxo_paciente.md
     #       - Fluxo Administrador: portal-paciente/uso/fluxo_admin.md
     #       - Integrações: portal-paciente/uso/integracoes.md
-      - Ambientes: portal-paciente/ambientes/index.md
+      - Ambientes: portal-paciente/ambientes/index.md 
+
   - Monitoramento Clínico:
       - Visão Geral: cma/index.md
+      - Arquitetura:       
+          - Web Admin: cma/arquitetura/painel_admin.md  
+      - Ambientes: cma/ambientes/index.md     
+
   - Santa Health:
       - Visão Geral: santa-health/index.md
+      - Arquitetura:
+          - App Mobile: santa-health/arquitetura/app_mobile.md      
+
   - Helix:
       - Visão Geral: helix/index.md
+      - Arquitetura:
+          - API: helix/arquitetura/backend_api.md
+          - Banco de Dados: helix/arquitetura/banco_dados.md
+      - Ambientes: helix/ambientes/index.md  
+
   - Balança Smart:
       - Visão Geral: smart-balance/index.md
+      - Arquitetura:       
+          - Web Admin: smart-balance/arquitetura/painel_admin.md  
+      - Ambientes: smart-balance/ambientes/index.md 
+
   - APIs Integração:
       - Visão Geral: integration/index.md
+      - Arquitetura:
+          - API: integration/arquitetura/backend_api.md
+          - Banco de Dados: integration/arquitetura/banco_dados.md
+      - Ambientes: integration/ambientes/index.md 
+
+  - API Autenticação:
+      - Visão Geral: authenticator/index.md
+      - Arquitetura: 
+          - API: authenticator/arquitetura/backend_api.md
+          - Banco de Dados: authenticator/arquitetura/banco_dados.md
+      - Ambientes: authenticator/ambientes/index.md  
+
   - RPA Financeiro:
       - Visão Geral: rpa-financial/index.md
-  - Santa News:
+      - Arquitetura:       
+          - API: rpa-financial/arquitetura/backend_api.md
+          - Web Admin: rpa-financial/arquitetura/painel_admin.md  
+          - Banco de Dados: rpa-financial/arquitetura/banco_dados.md
+      - Ambientes: rpa-financial/ambientes/index.md 
+
+  - Santa News:      
       - Visão Geral: santa-news/index.md
+      - Arquitetura:       
+          - API: santa-news/arquitetura/backend_api.md
+          - Web Admin: santa-news/arquitetura/painel_admin.md  
+          - Banco de Dados: santa-news/arquitetura/banco_dados.md
+      - Ambientes: santa-news/ambientes/index.md  
+
