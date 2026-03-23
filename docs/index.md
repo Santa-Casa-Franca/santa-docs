@@ -7,6 +7,8 @@ Esta é a documentação oficial de todos os projetos desenvolvidos pelo **Time 
 ## **Sumário de Projetos**
 
 - [Portal do Paciente](portal-paciente/index.md) - Plataforma para telemonitoramento e atendimento aos pacientes
+- [SantaBot](santa-bot/index.md) - Automação de mensagens WhatsApp para confirmação de agendamentos (SIRESP/AMEs)
+- [HealthPay](healthpay/index.md) - Sistema de gestão e processamento de pagamentos da Santa Casa Mais
 - [Monitoramento Clínico (CMA)](cma/index.md) - Sistema de monitoramento clínico em tempo real
 - [Santa Health](santa-health/index.md) - APP de gestão clínica
 - [Helix](helix/index.md) - API centralizadora de microserviços
