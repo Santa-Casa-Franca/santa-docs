@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="onco" schema="public" type="PostgreSQL - 13.20 (Debian 13.20-1.pgdg120+1)">
+   <sequences>
+      <sequence increment="1" name="chats_id_chat_seq" startValue="1"/>
+      <sequence increment="1" name="cid_id_cid_seq" startValue="1"/>
+      <sequence increment="1" name="device_id_device_token_seq" startValue="1"/>
+      <sequence increment="1" name="device_tokens_id_device_token_seq" startValue="1"/>
+      <sequence increment="1" name="faqs_id_faq_seq" startValue="1"/>
+      <sequence increment="1" name="forms_id_forms_seq" startValue="1"/>
+      <sequence increment="1" name="manuals_id_manual_seq" startValue="1"/>
+      <sequence increment="1" name="message_notifications_id_notification_seq" startValue="1"/>
+      <sequence increment="1" name="messages_id_message_seq" startValue="1"/>
+      <sequence increment="1" name="news_id_news_seq" startValue="1"/>
+      <sequence increment="1" name="options_id_options_seq" startValue="1"/>
+      <sequence increment="1" name="patient_labels_id_patient_label_seq" startValue="1"/>
+      <sequence increment="1" name="patients_id_patient_seq" startValue="1"/>
+      <sequence increment="1" name="question_responses_id_qresponse_seq" startValue="1"/>
+      <sequence increment="1" name="questions_id_questions_seq" startValue="1"/>
+      <sequence increment="1" name="responses_id_responses_seq" startValue="1"/>
+      <sequence increment="1" name="users_id_user_seq" startValue="1"/>
+      <sequence increment="1" name="videos_id_video_seq" startValue="1"/>
+   </sequences>
+   <tables>
+      <table catalog="onco" name="chats" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('chats_id_chat_seq'::regclass)" digits="0" id="0" name="id_chat" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="chat_id" foreignKey="messages_chat_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="messages"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="patient_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_patient" foreignKey="chats_patient_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="patients"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_chat" sequenceNumberInPK="1"/>
+         <index name="chats_pkey" unique="true">
+            <column ascending="true" name="id_chat"/>
+         </index>
+      </table>
+      <table catalog="onco" name="cid" numRows="88" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('cid_id_cid_seq'::regclass)" digits="0" id="0" name="id_cid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="id_cid" foreignKey="patients_id_cid_fkey" implied="false" onDeleteCascade="false" schema="public" table="patients"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="cid_code" nullable="false" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="id_label" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_patient_label" foreignKey="cid_id_label_fkey" implied="false" onDeleteCascade="false" schema="public" table="patient_labels"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_cid" sequenceNumberInPK="1"/>
+         <index name="cid_pkey" unique="true">
+            <column ascending="true" name="id_cid"/>
+         </index>
+         <index name="cid_cid_code_key" unique="true">
+            <column ascending="true" name="cid_code"/>
+         </index>
+      </table>
+      <table catalog="onco" name="device" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('device_id_device_token_seq'::regclass)" digits="0" id="0" name="id_device_token" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="patient_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_patient" foreignKey="device_patient_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="patients"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="token" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="platform" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="createdAt" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="updatedAt" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_device_token" sequenceNumberInPK="1"/>
+         <index name="device_pkey" unique="true">
+            <column ascending="true" name="id_device_token"/>
+         </index>
+         <index name="device_token_key" unique="true">
+            <column ascending="true" name="token"/>
+         </index>
+      </table>
+      <table catalog="onco" name="device_tokens" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('device_tokens_id_device_token_seq'::regclass)" digits="0" id="0" name="id_device_token" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="patient_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="token" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="platform" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="createdAt" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="updatedAt" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_device_token" sequenceNumberInPK="1"/>
+         <index name="device_tokens_pkey" unique="true">
+            <column ascending="true" name="id_device_token"/>
+         </index>
+         <index name="device_tokens_token_key" unique="true">
+            <column ascending="true" name="token"/>
+         </index>
+      </table>
+      <table catalog="onco" name="faqs" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('faqs_id_faq_seq'::regclass)" digits="0" id="0" name="id_faq" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="question" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="answer" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="created_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_user" foreignKey="faqs_created_by_fkey" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_user" foreignKey="faqs_updated_by_fkey" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="created_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="updated_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_faq" sequenceNumberInPK="1"/>
+         <index name="faqs_pkey" unique="true">
+            <column ascending="true" name="id_faq"/>
+         </index>
+      </table>
+      <table catalog="onco" name="forms" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('forms_id_forms_seq'::regclass)" digits="0" id="0" name="id_forms" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="formId" foreignKey="questions_formId_fkey" implied="false" onDeleteCascade="true" schema="public" table="questions"/>
+            <child catalog="onco" column="formId" foreignKey="responses_formId_fkey" implied="false" onDeleteCascade="true" schema="public" table="responses"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="title" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="3" name="isActive" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="maxScore" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="labels_id" nullable="false" remarks="Array of patient labels IDs that can view this form" size="10" type="_int4" typeCode="2003"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_forms" sequenceNumberInPK="1"/>
+         <index name="forms_pkey" unique="true">
+            <column ascending="true" name="id_forms"/>
+         </index>
+      </table>
+      <table catalog="onco" name="manuals" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('manuals_id_manual_seq'::regclass)" digits="0" id="0" name="id_manual" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="title" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="url" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="type" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="4" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="5" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_manual" sequenceNumberInPK="1"/>
+         <index name="manuals_pkey" unique="true">
+            <column ascending="true" name="id_manual"/>
+         </index>
+         <index name="manuals_url_key" unique="true">
+            <column ascending="true" name="url"/>
+         </index>
+         <index name="url_manual_unique_index" unique="true">
+            <column ascending="true" name="url"/>
+         </index>
+      </table>
+      <table catalog="onco" name="message_notifications" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('message_notifications_id_notification_seq'::regclass)" digits="0" id="0" name="id_notification" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="message_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_message" foreignKey="message_notifications_message_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="messages"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="recipient_patient_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_patient" foreignKey="message_notifications_recipient_patient_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="patients"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="sent" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="sent_at" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="createdAt" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="updatedAt" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_notification" sequenceNumberInPK="1"/>
+         <index name="message_notifications_pkey" unique="true">
+            <column ascending="true" name="id_notification"/>
+         </index>
+      </table>
+      <table catalog="onco" name="messages" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('messages_id_message_seq'::regclass)" digits="0" id="0" name="id_message" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="message_id" foreignKey="message_notifications_message_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="message_notifications"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="chat_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_chat" foreignKey="messages_chat_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="chats"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sender_role" nullable="false" remarks="" size="2147483647" type="enum_messages_sender_role" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="sender_patient_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_patient" foreignKey="messages_sender_patient_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="patients"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sender_staff_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_user" foreignKey="messages_sender_staff_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="content" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="'sent'::enum_messages_status" digits="0" id="6" name="status" nullable="true" remarks="" size="2147483647" type="enum_messages_status" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="7" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_message" sequenceNumberInPK="1"/>
+         <index name="messages_pkey" unique="true">
+            <column ascending="true" name="id_message"/>
+         </index>
+      </table>
+      <table catalog="onco" name="news" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('news_id_news_seq'::regclass)" digits="0" id="0" name="id_news" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="title" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="url" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="thumbnail" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="4" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="5" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_news" sequenceNumberInPK="1"/>
+         <index name="news_pkey" unique="true">
+            <column ascending="true" name="id_news"/>
+         </index>
+         <index name="news_url_key" unique="true">
+            <column ascending="true" name="url"/>
+         </index>
+         <index name="url_unique_index" unique="true">
+            <column ascending="true" name="url"/>
+         </index>
+      </table>
+      <table catalog="onco" name="options" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('options_id_options_seq'::regclass)" digits="0" id="0" name="id_options" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="questionId" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_questions" foreignKey="options_questionId_fkey" implied="false" onDeleteCascade="true" schema="public" table="questions"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="text" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="value" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="order" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_options" sequenceNumberInPK="1"/>
+         <index name="options_pkey" unique="true">
+            <column ascending="true" name="id_options"/>
+         </index>
+      </table>
+      <table catalog="onco" name="patient_labels" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('patient_labels_id_patient_label_seq'::regclass)" digits="0" id="0" name="id_patient_label" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="id_label" foreignKey="cid_id_label_fkey" implied="false" onDeleteCascade="false" schema="public" table="cid"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="label" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="2" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="3" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_patient_label" sequenceNumberInPK="1"/>
+         <index name="patient_labels_pkey" unique="true">
+            <column ascending="true" name="id_patient_label"/>
+         </index>
+      </table>
+      <table catalog="onco" name="patients" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('patients_id_patient_seq'::regclass)" digits="0" id="0" name="id_patient" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="patient_id" foreignKey="chats_patient_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="chats"/>
+            <child catalog="onco" column="patient_id" foreignKey="device_patient_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="device"/>
+            <child catalog="onco" column="recipient_patient_id" foreignKey="message_notifications_recipient_patient_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="message_notifications"/>
+            <child catalog="onco" column="sender_patient_id" foreignKey="messages_sender_patient_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="messages"/>
+            <child catalog="onco" column="submittedBy" foreignKey="responses_submittedBy_fkey" implied="false" onDeleteCascade="true" schema="public" table="responses"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="service_id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="cpf" nullable="false" remarks="" size="11" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="cdPhysicalPerson" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
+            <parent catalog="onco" column="name" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="public" table="SequelizeMeta"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="birth_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="entry_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="id_cid" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_cid" foreignKey="patients_id_cid_fkey" implied="false" onDeleteCascade="false" schema="public" table="cid"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="department" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="doctor" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="gender" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="11" name="active" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="12" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="13" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_patient" sequenceNumberInPK="1"/>
+         <index name="patients_pkey" unique="true">
+            <column ascending="true" name="id_patient"/>
+         </index>
+         <index name="patients_service_id_key" unique="true">
+            <column ascending="true" name="service_id"/>
+         </index>
+      </table>
+      <table catalog="onco" name="question_responses" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('question_responses_id_qresponse_seq'::regclass)" digits="0" id="0" name="id_qresponse" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_responses" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_responses" foreignKey="question_responses_id_responses_fkey" implied="false" onDeleteCascade="true" schema="public" table="responses"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="questionId" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_questions" foreignKey="question_responses_questionId_fkey" implied="false" onDeleteCascade="true" schema="public" table="questions"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="selectedOptions" nullable="true" remarks="" size="10" type="_int4" typeCode="2003"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="textAnswer" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_qresponse" sequenceNumberInPK="1"/>
+         <index name="question_responses_pkey" unique="true">
+            <column ascending="true" name="id_qresponse"/>
+         </index>
+      </table>
+      <table catalog="onco" name="questions" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('questions_id_questions_seq'::regclass)" digits="0" id="0" name="id_questions" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="questionId" foreignKey="options_questionId_fkey" implied="false" onDeleteCascade="true" schema="public" table="options"/>
+            <child catalog="onco" column="questionId" foreignKey="question_responses_questionId_fkey" implied="false" onDeleteCascade="true" schema="public" table="question_responses"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="formId" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_forms" foreignKey="questions_formId_fkey" implied="false" onDeleteCascade="true" schema="public" table="forms"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="title" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="type" nullable="false" remarks="" size="2147483647" type="enum_questions_type" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="required" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="order" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_questions" sequenceNumberInPK="1"/>
+         <index name="questions_pkey" unique="true">
+            <column ascending="true" name="id_questions"/>
+         </index>
+      </table>
+      <table catalog="onco" name="responses" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('responses_id_responses_seq'::regclass)" digits="0" id="0" name="id_responses" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="id_responses" foreignKey="question_responses_id_responses_fkey" implied="false" onDeleteCascade="true" schema="public" table="question_responses"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="formId" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_forms" foreignKey="responses_formId_fkey" implied="false" onDeleteCascade="true" schema="public" table="forms"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="submittedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="submittedBy" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_patient" foreignKey="responses_submittedBy_fkey" implied="false" onDeleteCascade="true" schema="public" table="patients"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="assignedBy" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="onco" column="id_user" foreignKey="responses_assignedBy_fkey" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="score" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_responses" sequenceNumberInPK="1"/>
+         <index name="responses_pkey" unique="true">
+            <column ascending="true" name="id_responses"/>
+         </index>
+      </table>
+      <table catalog="onco" name="SequelizeMeta" numRows="17" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
+            <child catalog="onco" column="name" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="public" table="patients"/>
+         </column>
+         <primaryKey column="name" sequenceNumberInPK="1"/>
+         <index name="SequelizeMeta_pkey" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table catalog="onco" name="users" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('users_id_user_seq'::regclass)" digits="0" id="0" name="id_user" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="onco" column="created_by" foreignKey="faqs_created_by_fkey" implied="false" onDeleteCascade="false" schema="public" table="faqs"/>
+            <child catalog="onco" column="updated_by" foreignKey="faqs_updated_by_fkey" implied="false" onDeleteCascade="false" schema="public" table="faqs"/>
+            <child catalog="onco" column="sender_staff_id" foreignKey="messages_sender_staff_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="messages"/>
+            <child catalog="onco" column="assignedBy" foreignKey="responses_assignedBy_fkey" implied="false" onDeleteCascade="false" schema="public" table="responses"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="username" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="password" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="3" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_user" sequenceNumberInPK="1"/>
+         <index name="users_pkey" unique="true">
+            <column ascending="true" name="id_user"/>
+         </index>
+         <index name="users_username_key" unique="true">
+            <column ascending="true" name="username"/>
+         </index>
+      </table>
+      <table catalog="onco" name="videos" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('videos_id_video_seq'::regclass)" digits="0" id="0" name="id_video" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="youtube_id" nullable="false" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="title" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="url" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="thumbnail" nullable="false" remarks="" size="2147483647" type="bytea" typeCode="-2"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="5" name="createdAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="6" name="updatedAt" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id_video" sequenceNumberInPK="1"/>
+         <index name="videos_pkey" unique="true">
+            <column ascending="true" name="id_video"/>
+         </index>
+         <index name="videos_youtube_id_key" unique="true">
+            <column ascending="true" name="youtube_id"/>
+         </index>
+      </table>
+   </tables>
+</database>
