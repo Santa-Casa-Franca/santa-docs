@@ -28,7 +28,7 @@ nav:
       - Arquitetura:       
           - Web Admin: cma/arquitetura/painel_admin.md  
       - Ambientes: cma/ambientes/index.md     
-
+    
   - Santa Health:
       - Visão Geral: santa-health/index.md
       - Arquitetura:
@@ -69,11 +69,28 @@ nav:
           - Banco de Dados: rpa-financial/arquitetura/banco_dados.md
       - Ambientes: rpa-financial/ambientes/index.md 
 
-  - Santa News:      
+  - Santa News:
       - Visão Geral: santa-news/index.md
-      - Arquitetura:       
+      - Arquitetura:
           - API: santa-news/arquitetura/backend_api.md
-          - Web Admin: santa-news/arquitetura/painel_admin.md  
+          - Web Admin: santa-news/arquitetura/painel_admin.md
           - Banco de Dados: santa-news/arquitetura/banco_dados.md
-      - Ambientes: santa-news/ambientes/index.md  
+      - Ambientes: santa-news/ambientes/index.md
+
+  - SantaBot:
+      - Visão Geral: santa-bot/index.md
+      - Arquitetura:
+          - Backend API: santa-bot/arquitetura/backend_api.md
+          - Gerenciador de Filas: santa-bot/arquitetura/tasks.md
+          - Worker: santa-bot/arquitetura/worker.md
+          - Gateway de Mensagens: santa-bot/arquitetura/omnichannel.md
+          - Painel Web: santa-bot/arquitetura/painel_admin.md
+      - Ambientes: santa-bot/ambientes/index.md
+
+  - HealthPay:
+      - Visão Geral: healthpay/index.md
+      - Arquitetura:
+          - Backend API: healthpay/arquitetura/backend_api.md
+          - Painel Web: healthpay/arquitetura/painel_admin.md
+      - Ambientes: healthpay/ambientes/index.md
 
